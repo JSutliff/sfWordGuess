@@ -10,7 +10,20 @@
   <title>SF Word Guessing Game</title>
 </head>
 <body>
-  
+  <div id="mainContent" class="uk-container">
+    <div id="gameContainer" class="uk-container">
+      <h2>San Francisco themed hangman style word guessing game</h2>
+      <h3>Try to guess the current word by selecting letters on your keyboard</h3>
+
+      <div id="scroreBoard" class="uk-container">
+        <p>Current Word: <span id="currentWord"></span></p>
+        <p>Letters Guessed: <span id="lettersGuessed"></span></p>
+        <p>Remaining Guesses: <span id="remainingGuesses"></span></p>
+      </div>
+    </div>
+
+
+  </div>
 </body>
 
 <!-- UIkit JS -->
@@ -18,3 +31,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit-icons.min.js"></script>
 <script src="script.js"></script>
 </html>
+
