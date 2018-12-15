@@ -48,18 +48,6 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-// display _ for each letter of currentWord
-// for (let i = 0; i < currentWord.length; i++) {
-//   displayWord = displayWord += '_ ';
-// }
-
-// if remaingingGuesses > 0
-// check user guess against currentWord
-// if currentWord includes userGuess
-// display userGuessed letter in place of _
-
-// else remainingGuesses --
-
 function newWord() {
   // assign selected word to currentWord
   currentWord = wordList[getRandomInt(wordList.length)].split("");
