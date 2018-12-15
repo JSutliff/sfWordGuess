@@ -42,6 +42,7 @@ let lettersGuessed = [];
 let remainingGuesses = 5;
 let wins = 0;
 let losses = 0;
+let wordLength;
 
 // Raondomly select word from word list
 function getRandomInt(max) {
@@ -53,6 +54,7 @@ function newWord() {
   currentWord = wordList[getRandomInt(wordList.length)].split("");
   lettersGuessed = [];
   remainingGuesses = 5;
+  wordLength = currentWord.length;
 }
 
 newWord();
@@ -68,6 +70,9 @@ function handleDomUpdate() {
       return (elem = "_ ");
     });
   }
+  // display length of current word
+  document.getElementById('length').textContent = wordLength;
+
   document.querySelector("#currentWord").textContent = displayWord.join(" ");
   // display letters guess
   document.querySelector("#lettersGuessed").textContent = lettersGuessed;
