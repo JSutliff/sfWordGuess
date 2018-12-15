@@ -20,16 +20,31 @@
           Try to guess the current word by selecting letters on your keyboard
         </h3>
 
-        <div id="scroreBoard" class="uk-container">
-          <p>Current Word: <span id="currentWord"></span></p>
-          <p>Letters Guessed: <span id="lettersGuessed"></span></p>
-          <p>Remaining Guesses: <span id="remainingGuesses"></span></p>
+        <div>
+          <div class="uk-card uk-card-default">
+            <div class="uk-card-media-top">
+              <img src="assets/trolly.jpeg" alt="" style="height:350px" />
+              <h3>Wins: <span id="wins"></span></h3>
+              <h3>Losses: <span id="losses"></span></h3>
+            </div>
+            <div id="scroreBoard" class="uk-card-body">
+              <p>Current Word: <span id="currentWord"></span></p>
+              <p>Letters Guessed: <span id="lettersGuessed"></span></p>
+              <p>Remaining Guesses: <span id="remainingGuesses"></span></p>
+              <p>Remaining Guesses: <span id="remainingGuesses"></span></p>
+            </div>
+            <div class="uk-card-footer">
+              <input
+              class="uk-input uk-form-width-medium"
+              type="text"
+              placeholder="Choose a letter"
+            />
+            <button id="submit" class="uk-button uk-button-default">
+              Submit
+            </button>
+            </div>
+          </div>
         </div>
-
-        <div class="uk-margin">
-          <input class="uk-input uk-form-width-medium" type="text" placeholder="Choose a letter">
-          <button class="uk-button uk-button-default">Submit</button>
-      </div>
       </div>
     </div>
   </body>
