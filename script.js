@@ -70,7 +70,7 @@ function handleDomUpdate() {
     });
   }
   // display length of current word
-  document.getElementById('length').textContent = `${currentWord.length}`;
+  document.getElementById('length').textContent = currentWord.length;
 
   document.querySelector("#currentWord").textContent = displayWord.join(" ");
   // display letters guess
