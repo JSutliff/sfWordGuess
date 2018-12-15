@@ -54,7 +54,6 @@ function newWord() {
   currentWord = wordList[getRandomInt(wordList.length)].split("");
   lettersGuessed = [];
   remainingGuesses = 5;
-  wordLength = currentWord.length;
 }
 
 newWord();
@@ -71,7 +70,7 @@ function handleDomUpdate() {
     });
   }
   // display length of current word
-  document.getElementById('length').textContent = wordLength;
+  document.getElementById('length').textContent = `${currentWord.length}`;
 
   document.querySelector("#currentWord").textContent = displayWord.join(" ");
   // display letters guess
