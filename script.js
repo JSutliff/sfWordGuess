@@ -2,7 +2,7 @@ const wordList = [
   // "geary",
   // "lombard",
   // "hyde",
-  "broadway",
+  "broadway"
   // "columbus",
   // "kearny",
   // "chestnut",
@@ -29,7 +29,9 @@ const wordList = [
   // "rent",
   // "hyphy",
   // "dank",
-  // 'hills'
+  // 'hills',
+  // 'presidio',
+  // 'parking'
 ];
 let currentWord = "";
 let displayWord = "";
@@ -67,18 +69,15 @@ function handleDomUpdate() {
   document.querySelector("#wins").textContent = wins;
   document.querySelector("#losses").textContent = losses;
 
-  
-
   // display _ for letters of current word
   if (lettersGuessed.length === 0) {
-    displayWord = currentWord
-    .map(elem => {
+    displayWord = currentWord.map(elem => {
       return (elem = "_ ");
     });
   }
-  document.querySelector("#currentWord").textContent = displayWord.join(' ');
-    // display letters guess
-    document.querySelector("#lettersGuessed").textContent = lettersGuessed;
+  document.querySelector("#currentWord").textContent = displayWord.join(" ");
+  // display letters guess
+  document.querySelector("#lettersGuessed").textContent = lettersGuessed;
 
   // display remaining guesses
   document.querySelector("#remainingGuesses").textContent = remainingGuesses;
@@ -98,7 +97,11 @@ function resetGuessVars() {
 
 function checkUserGuess(userKey) {
   if (currentWord.includes(userKey)) {
-    displayWord[currentWord.indexOf(userKey)] = userKey;
+    for (let i = 0; i < currentWord.length; i++) {
+      if (currentWord[i] === userKey) {
+        displayWord[i] = userKey;
+      }
+    }
     lettersGuessed.push(userKey);
   } else {
     lettersGuessed.push(userKey);
@@ -107,14 +110,12 @@ function checkUserGuess(userKey) {
   handleDomUpdate();
 }
 
-
-
-
-document.getElementById('submit').addEventListener('click', function(event){
-  let userGuess = document.querySelector('#input').value.trim().slice(0, 1).toLowerCase();
-  document.querySelector('#input').value = '';
+document.getElementById("submit").addEventListener("click", function(event) {
+  let userGuess = document
+    .querySelector("#input")
+    .value.trim()
+    .slice(0, 1)
+    .toLowerCase();
+  document.querySelector("#input").value = "";
   checkUserGuess(userGuess);
 });
-
-
-
